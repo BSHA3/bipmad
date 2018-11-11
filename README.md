@@ -1,13 +1,13 @@
 # BIPMAD
 Bitcoin Improvement Proposal Modifications and Deletions for BSHA3
 
-> For unmentioned BIPs, BSHA3 corresponds to Bitcoin.
+> For anything unmentioned, BSHA3 corresponds to Bitcoin.
 
 Here is a listing of chain nuances:
 
 - BIP34 is always enabled. However, for blocks under 16, `push_int64` is instead used of the encoding in the original BIP. The genesis block is also mined with a `CScriptNum(0)` for conformance. See: https://github.com/bitcoin/bitcoin/pull/14633 for Bitcoin's discussion.
 
-- `SHA256d` is still used in calculation of the tx Merkle Root.
+- Although it calculates the hashes of the leaves using `SHA3d`, BSHA3 performs the reduction step of merkle root calculation using `SHA256d`. Satoshi's classic Merkle Tree implementation (standard, leaf-node weakness) is used.
 
 - CSV (BIP 68, 112, 113) is always enabled. This means its code has been migrated out of the BIP9-activation path.
 
