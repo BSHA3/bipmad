@@ -13,6 +13,6 @@ Here is a listing of chain nuances:
 
 - Segwit is always enabled. This means its code has been migrated out of the BIP9-activation path.
 
-- The Segwit witness commitment prefix has been changed to `0f0f0f0f0f0f`, from Bitcoin's `6a24aa21a9ed`. This is for simplicity only. See: https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki#commitment-structure for Bitcoin's specification.
+- The Segwit commitment header has been changed to `0f0f0f0f`, from Bitcoin's `aa21a9ed`. This is for simplicity only. See: https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki#commitment-structure for Bitcoin's specification.
 
 - Addresses are in a modified `base58check` format - the checksum is calculated by 2 rounds of SHA3-256 instead of SHA256.
